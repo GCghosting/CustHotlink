@@ -88,7 +88,7 @@ bot.start(async (ctx) => {
         }
 
         if (results.length === 0) {
-            ctx.reply('You are not authorized to use this bot. Please contact the administrator.');
+            ctx.reply('You are not authorized to use this bot. Please contact @gassturn to use it.');
             return;
         }
 
@@ -100,7 +100,7 @@ bot.start(async (ctx) => {
                 reply_markup: {
                     inline_keyboard: [
                         [
-                            { text: 'Login', callback_data: 'login' },
+                            { text: 'Login Number', callback_data: 'login' },
                         ],
                     ]
                 }
@@ -353,6 +353,9 @@ async function loggedIn(ctx) {
                         { text: `Data 10GB (4G/5G) and 10GB (5G) for 7 days [FREE]`, callback_data: '10gb7d' },
                     ],
                     [
+                        { text: `Subscribe Unlimited 6Mbps and Uncapped 5G Nights 7 days [FREE]`, callback_data: '5gnight' },
+                    ],
+                    [
                         { text: `DataRahmah 30Gb + 180 Day Validity [RM15]`, callback_data: 'rahmahvoucher' },
                     ],
                     [
@@ -488,6 +491,11 @@ bot.on('callback_query', async (ctx) => {
         await handleSubscriptionVoucher(ctx, plan);
     }
 
+    if (callbackData === '5gnight') {
+        const plan = '5gnight';
+        await handleSubscriptionVoucher(ctx, plan);
+    }
+
     if (callbackData === 'sabah30') {
         const plan = 'sabah30';
         await handleSubscription(ctx, plan);
@@ -594,9 +602,16 @@ async function handleSubscriptionVoucher(ctx, plan) {
         voucherId = 859;
         campaignId = 760;
 
-    } else if (plan === 'rahmahvoucher') {
+    } else if (plan === '10gb7d') {
         boId = '57474098';
         message = 'Successfully Subscribe 10Gb 7days!';
+        price = 0;
+        voucherId = 859;
+        campaignId = 760;
+
+else if (plan === '5gnight') {
+        boId = '57473428';
+        message = 'Successfully Subscribe Unlimited 6Mbps and Uncapped 5G Nights 7 days';
         price = 0;
         voucherId = 859;
         campaignId = 760;
@@ -706,7 +721,7 @@ async function checkVoucher(ctx) {
 
             if (userVoucherIds.length > 0) {
                 ctx.session.isVoucherAvailable = 'Available';
-                isVoucherAvailable = 1;
+                isVoucherAvailable = 70;
             } else {
                 ctx.session.isVoucherAvailable = 'Not Available';
                 isVoucherAvailable = 0;
