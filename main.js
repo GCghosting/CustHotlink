@@ -332,19 +332,22 @@ async function loggedIn(ctx) {
             reply_markup: {
                 inline_keyboard: [
                     [
-                        { text: '✨Buy Without Voucher✨', callback_data: 'a' },
+                        { text: '✨Buy Without Using Voucher✨', callback_data: 'a' },
                     ],
                     [
-                        { text: 'Data Sabah 30 Day [RM20]', callback_data: 'sabah30' },
+                        { text: 'Subscribe Data Sabah 30 Day [RM20]', callback_data: 'sabah30' },
                     ],
                     [
-                        { text: ` Data Sabah 7 Day [RM5]`, callback_data: 'sabah07' },
+                        { text: `Subscribe Data Sabah 7 Day [RM5]`, callback_data: 'sabah07' },
                     ],
                     [
-                        { text: '✨Buy With Voucher✨', callback_data: 'a' },
+                        { text: `================================` },
                     ],
                     [
-                        { text: ` Data Sabah 30 Day [RM5]`, callback_data: 'sabah30voucher' },
+                        { text: '✨Buy With Using Claim Voucher✨', callback_data: 'a' },
+                    ],
+                    [
+                        { text: `Subscribe Data Sabah 30 Day [RM5]`, callback_data: 'sabah30voucher' },
                     ],
                     [
                         { text: `Data 10GB (4G/5G) and 10GB (5G) for 7 days [FREE]`, callback_data: '10gb7d' },
