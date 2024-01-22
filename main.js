@@ -609,7 +609,7 @@ async function handleSubscriptionVoucher(ctx, plan) {
         voucherId = 859;
         campaignId = 760;
 
-else if (plan === '5gnight') {
+    } else if (plan === '5gnight') {
         boId = '57473428';
         message = 'Successfully Subscribe Unlimited 6Mbps and Uncapped 5G Nights 7 days';
         price = 0;
